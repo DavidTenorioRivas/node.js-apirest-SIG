@@ -17,34 +17,33 @@ block content
                     th %
                     th %PREC.A.
                     th CLASE
-                  //  th MANTENIMIENTO
+                //  th MANTENIMIENTO
             tbody.center-align
             for col,i in data
                 tr
                     th.center-align
-                        span #{i+1}
+                        span #{i + 1}
                     th.center-align= col.codeProduct
                     th.center-align= col.descriProduct
-                    th.center-align= col.uniteProduct
-                    th.center-align= porcentaje
-                    th.center-align= col.costProduct
-                    th.center-align= "%"
-                    th.center-align= col.totalProdcut
-                    th.center-align= "%"
-                    th.center-align= "%"
-                    th.center-align= "CLASE"
+                    th.center-align= col.uniteProduct.toFixed(2)
+                    th.center-align= col.juan.toFixed(2)
+                    th.center-align= col.costProduct.toFixed(2)
+                    th.center-align= col.david.toFixed(2)
+                    th.center-align= col.totalProdcut.toFixed(2)
+                    th.center-align= col.rivas.toFixed(2)
+                    th.center-align= col.tenorio.toFixed(2)
+                    th(class="yellow lighten-5").center-align= col.clase
             tr
                 th(class="red lighten-3" colspan = 3).center-align TOTAL
                 th(class="red lighten-5").center-align= sumaUnite
-                th.center-align= porcentaje2
+                th.center-align= porcentajetotal
                 th(class="red lighten-5").center-align= sumaCosto
                 th.center-align
                 th(class="red lighten-5").center-align= sumaTotal
+                th.center-align= porcentajeacutotal
                 th.center-align
                 th.center-align
-                th.center-align
-                //for col,i in data
-                //    label= parseFloat(col.uniteProduct + col.uniteProduct[i-1])
+
         div(id="curve_chart" style="width: 900px; height: 500px")
         form(method="get" action="/menu" enctype="application/x-www-form-urlencoded")
         div.center-align

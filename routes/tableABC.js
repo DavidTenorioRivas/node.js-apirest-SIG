@@ -20,15 +20,15 @@ router.get("/", function (req, res, next) {
             var sumaUnite = 0;
             var sumaCosto = 0;
             var sumaTotal = 0;
-            var prueba = 0;
-            var prueba2 = 0;
+            var porcentajeacu = 0;
+            var porcentaje = 0;
+            var portotal = 0;
+            var poracutotal = 0;
+
             for (var i in array) {
 
                 uniteTotal += array[i].uniteProduct;
                 sumaUnite += array[i].uniteProduct;
-                prueba = (array[i].uniteProduct / sumaUnite) * 100;
-                prueba2 += prueba;
-                console.log(prueba);
                 //console.log(array[i].uniteProduct);
                 costoTotal += array[i].costProduct;
                 sumaCosto += array[i].costProduct;
@@ -36,13 +36,40 @@ router.get("/", function (req, res, next) {
                 sumaTotal += array[i].totalProdcut;
 
             }
-            // console.log(prueba2);
-            // console.log("suma costo" + sumaCosto.toFixed(2));
-            // console.log("XXXXXXXXXXXXXXXXX" + prueba);
-            // console.log("la suma es  " + sumaUnite + "  ");
-            // console.log("unidades" + uniteTotal + "  ");
-            // console.log("precio unitario" + costoTotal + "  ");
-            // console.log("precio total" + priceTotal + "  ");
+            var total = sumaUnite;
+            var total2 =sumaTotal;
+            for (j in array) {
+                porcentajeacu += (array[j].uniteProduct / total) * 100;
+                array[j].david = porcentajeacu;
+                porcentaje = (array[j].uniteProduct / total) * 100;
+                array[j].juan = porcentaje;
+
+                portotal += (array[j].totalProdcut / total2) * 100;
+                array[j].tenorio = portotal;
+
+                poracutotal = (array[j].totalProdcut / total2) * 100;
+                array[j].rivas = poracutotal;
+                if (array[j].tenorio < 50){
+                    array[j].clase = "A";
+                    console.log("clase A"+array[j].tenorio);
+                }
+                else if (array[j].tenorio>=50 && array[j].tenorio<=85){
+                    array[j].clase = "B";
+                    console.log("clase B"+array[j].tenorio);
+                }
+                else {
+                    array[j].clase = "C";
+                    console.log("clase C"+array[j].tenorio);
+                }
+            }
+            console.log(array[j].david);
+            // var cadena =[1,2,3,4,5];
+            // var cadena2 =[1,2,3,4,5];
+            // localStorage.cadena=cadena;
+            // localStorage.cadena2=cadena2;
+            // console.log(porcentajeacu);
+            // console.log(portotal);
+            // console.log(total);
             // var cadena = result;
             // if (cadena.length > 0) {
             //     var atributos = "";
@@ -60,8 +87,8 @@ router.get("/", function (req, res, next) {
                     sumaUnite: sumaUnite,
                     sumaCosto: sumaCosto.toFixed(2),
                     sumaTotal: sumaTotal.toFixed(2),
-                    porcentaje: prueba.toFixed(2),
-                    porcentajetoal: prueba2.toFixed(2)
+                    porcentajetotal: porcentajeacu.toFixed(2),
+                    porcentajeacutotal: portotal.toFixed(2),
                 });
             } else {
                 res.status(404).send({
@@ -70,8 +97,8 @@ router.get("/", function (req, res, next) {
                 });
             }
 
-
         });
+
 
 });
 

@@ -27,6 +27,7 @@ router.post("/", function (req, res, next) {
                 throw err;
             }
             if (result.affectedRows == 1) {
+
                 res.redirect("diagABC");
             } else {
                 res.status(404).send({

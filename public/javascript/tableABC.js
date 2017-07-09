@@ -1,25 +1,27 @@
-$(document).ready(function(){
+$(document).ready(function () {
     $('.parallax').parallax();
     $('.modal').modal();
     $('.button-collapse').sideNav();
     $('.carousel').carousel();
-
-    google.charts.load('current', {'packages':['corechart']});
+    // var uni = localStorage.cadena;
+    // var total = localStorage.cadena2;
+    google.charts.load('current', {'packages': ['corechart']});
     google.charts.setOnLoadCallback(drawChart);
 
     function drawChart() {
         var data = google.visualization.arrayToDataTable([
-            ['PERIODO', 'VENTAS'],
-            ['2004',  10],
-            ['2005',  25],
-            ['2006',  49],
-            ['2007',  73]
+            // ['Year', 'Sales'],
+            // ['2013',  1000],
+            // ['2014',  1170],
+            // ['2015',  660],
+            // ['2016',  1030]
+            uni, total
         ]);
 
         var options = {
             title: 'DIAGRAMA ABC',
             curveType: 'function',
-            legend: { position: 'bottom' }
+            legend: {position: 'bottom'}
         };
 
         var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
@@ -28,11 +30,10 @@ $(document).ready(function(){
     }
 
 
-
 });
 
-(function($){
-    $(function(){
+(function ($) {
+    $(function () {
 
         $('.button-collapse').sideNav();
         $('.parallax').parallax();
