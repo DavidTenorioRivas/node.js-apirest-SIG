@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="MySQL - SIG@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+    <schema id="1" name="sig">
+      <visible>1</visible>
+    </schema>
+    <schema id="2" name="chirinos"/>
+    <schema id="3" name="information_schema"/>
+    <schema id="4" name="mysql"/>
+    <schema id="5" name="performance_schema"/>
+    <schema id="6" name="phpmyadmin"/>
+    <schema id="7" name="test"/>
+    <table id="8" parent="1" name="product"/>
+    <routine id="9" parent="1" name="sp_GetProducts">
+      <routine-kind>PROCEDURE</routine-kind>
+    </routine>
+    <routine id="10" parent="1" name="sp_PostProduct">
+      <routine-kind>PROCEDURE</routine-kind>
+    </routine>
+    <column id="11" parent="8" name="idProduct">
+      <mandatory>1</mandatory>
+      <data-type>int(10) unsigned|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="12" parent="8" name="codeProduct">
+      <mandatory>1</mandatory>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="13" parent="8" name="descriProduct">
+      <mandatory>1</mandatory>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="14" parent="8" name="uniteProduct">
+      <mandatory>1</mandatory>
+      <data-type>double|0</data-type>
+    </column>
+    <column id="15" parent="8" name="costProduct">
+      <mandatory>1</mandatory>
+      <data-type>double|0</data-type>
+    </column>
+    <column id="16" parent="8" name="totalProdcut">
+      <mandatory>1</mandatory>
+      <data-type>double|0</data-type>
+    </column>
+    <key id="17" parent="8" name="PRIMARY">
+      <columns>idProduct</columns>
+      <primary>1</primary>
+    </key>
+    <argument id="18" parent="10" name="_codeProduct">
+      <direction>IN</direction>
+      <data-type>varchar(50)|0</data-type>
+    </argument>
+    <argument id="19" parent="10" name="_descriProduct">
+      <direction>IN</direction>
+      <data-type>varchar(50)|0</data-type>
+    </argument>
+    <argument id="20" parent="10" name="_uniteProduct">
+      <direction>IN</direction>
+      <data-type>double|0</data-type>
+    </argument>
+    <argument id="21" parent="10" name="_costProduct">
+      <direction>IN</direction>
+      <data-type>double|0</data-type>
+    </argument>
+  </database-model>
+</dataSource>

@@ -1,0 +1,32 @@
+extends diagABC_layout
+block content
+    div(class="row container")
+        div(class="row col s12 card-panel blue lighten-3" ).panel-heading.center
+            h1(class="black-text text-darken-2") DIAGRAMA ABC
+        form(method="post" action="/diagABC" enctype="application/x-www-form-urlencoded")
+            div(class="row col s12")
+                div(class="col s12")
+                    div(class="col s3")
+                        div(class="input-field")
+                            input(id="codeProduct" name="_codeProduct" type="text" class="validate").center-align
+                            label(for="codeProduct") CODIGO:
+                    div(class="col s3")
+                        div(class="input-field")
+                            input(id="descriProduct" name="_descriProduct" type="text" class="validate").center-align
+                            label(for="descriProduct") DESCRIPCION:
+                    div(class="col s3")
+                        div(class="input-field")
+                            input(id="uniteProduct" name="_uniteProduct" type="text" class="validate").center-align
+                            label(for="uniteProduct") UNIDADES:
+                    div(class="col s3")
+                        div(class="input-field")
+                            input(id="costProduct" name="_costProduct" type="text" class="validate").center-align
+                            label(for="costProduct") COSTO UNITARIO:
+                div(class="row col s12")
+                    div.center-align
+                        input(type="submit" class="btn waves-effect waves-light" value="AGREGAR")
+                div(class="row col s12")
+        form(method="get" action="/tableABC" enctype="application/x-www-form-urlencoded")
+                    div.center-align
+                        input(type="submit" class="btn waves-effect waves-light" value="GENERAR DIAGRAMA ABC")
+        div(class="row col s12")

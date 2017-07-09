@@ -1,0 +1,33 @@
+{
+  "name": "mysoftskills",
+  "version": "1.0.0",
+  "description": "A project for determining your skills",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon /api/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://CarlitosDroid@bitbucket.org/freelos_villarreal/android-mysoftskills.git"
+  },
+  "keywords": [
+    "node",
+    "skills",
+    "soft"
+  ],
+  "author": "FREELOS_VILLARREAL (Carlos, David, Bill)",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/freelos_villarreal/android-mysoftskills#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "express-session": "^1.15.2",
+    "jade": "^1.11.0",
+    "jquery": "^3.1.1",
+    "mysql": "^2.13.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}

@@ -1,0 +1,52 @@
+extends tableABC_layout
+block content
+    div(class="row container")
+        div(class="row col s12 card-panel blue lighten-3" ).panel-heading.center
+            h1(class="black-text text-darken-2") DIAGRAMA ABC
+        table(class="bordered highlight responsive-table centered")
+            thead(class="green lighten-3").center-align
+                tr
+                    th N°
+                    th CODIGO
+                    th DESCRIPCION
+                    th UNIDADES
+                    th %
+                    th C. UNITARIO
+                    th % UNI.A.
+                    th C.TOTAL
+                    th %
+                    th %PREC.A.
+                    th CLASE
+                  //  th MANTENIMIENTO
+            tbody.center-align
+            for col,i in data
+                tr
+                    th.center-align
+                        span #{i+1}
+                    th.center-align= col.codeProduct
+                    th.center-align= col.descriProduct
+                    th.center-align= col.uniteProduct
+                    th.center-align= porcentaje
+                    th.center-align= col.costProduct
+                    th.center-align= "%"
+                    th.center-align= col.totalProdcut
+                    th.center-align= "%"
+                    th.center-align= "%"
+                    th.center-align= "CLASE"
+            tr
+                th(class="red lighten-3" colspan = 3).center-align TOTAL
+                th(class="red lighten-5").center-align= sumaUnite
+                th.center-align= porcentaje2
+                th(class="red lighten-5").center-align= sumaCosto
+                th.center-align
+                th(class="red lighten-5").center-align= sumaTotal
+                th.center-align
+                th.center-align
+                th.center-align
+                //for col,i in data
+                //    label= parseFloat(col.uniteProduct + col.uniteProduct[i-1])
+        div(id="curve_chart" style="width: 900px; height: 500px")
+        form(method="get" action="/menu" enctype="application/x-www-form-urlencoded")
+        div.center-align
+            form(action="/menu")
+                input(type="submit" class="btn waves-effect waves-light" value="REGRESAR AL MENU")
